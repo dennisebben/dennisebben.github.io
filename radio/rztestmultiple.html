@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Stream tester</title>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+//var audioPlayer = "<audio id=\"radio6\" controls autoplay preload=\"none\" ><source src=\"http://radiozuyd.shoutcaststream.com:8199/stream\">Uw browser ondersteunt geen HTML5. Probeer Google Chrome.</audio><br>";
+var audioPlayer = "<audio controls autoplay ><source src=\"https://cc6.beheerstream.com/8199\">Uw browser ondersteunt geen HTML5. Probeer Google Chrome.</audio><br><br>";
+
+var audioPlayerLeft = "<audio id=\"radioplayer";
+var audioPlayerRight = "\" controls autoplay ><source src=\"https://cc6.beheerstream.com/8199\">Uw browser ondersteunt geen HTML5. Probeer Google Chrome.</audio><br><br>";
+
+var nStreams = window.prompt("Hoeveel streams wil je openen? ");
+
+var i;
+for (i = 0; i < nStreams; i++) 
+{
+  //document.write("Hello: " + i + "<br>");
+  //document.write(audioPlayer);
+  document.open();
+  document.writeln(audioPlayerLeft + i + audioPlayerRight);
+  document.close();
+}
+
+</script>
+
+</body>
+</html>
+
